@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 09:07:46 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/01/15 13:45:59 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/01/15 13:46:36 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ char	*ft_strchr(const char *s, int c)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len1;
-	size_t	len2;
+	int	len1;
+	int	len2;
 	char	*finalstr;
 
 	if (!s1 || !s2)
