@@ -6,7 +6,7 @@
 /*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 09:07:46 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/01/16 11:53:48 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/16 13:26:55 by junesalaber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start >= slen)
-		return ("");
+		return (NULL);
 	if (len > slen - start)
 		len = slen - start;
 	s += start;
