@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 09:07:32 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/01/16 12:25:01 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/17 10:16:55 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ char	*ft_free(char **str)
 	return (NULL);
 }
 
-static char	*ft_read_file(int fd, char *saved)
+char	*ft_read_file(int fd, char *saved)
 {
 	int			readline;
 	char		*buffer;
 
 	readline = 1;
-	buffer = malloc (BUFFER_SIZE + 1 * sizeof(char));
+	buffer = malloc (sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (ft_free(&saved));
 	buffer[0] = '\0';
-	while (readline > 0 && !ft_strchr(saved, '\n'))
+	while (readline > 0 && !ft_strchr(buffer, '\n'))
 	{
 		readline = read(fd, buffer, BUFFER_SIZE);
 		if (readline > 0)
@@ -72,7 +72,7 @@ char	*ft_clean_saved(char *saved)
 	}
 	else
 		len = (ptr - saved) + 1;
-	if (saved[len])
+	if (!saved[len])
 		return (ft_free(&saved));
 	new = ft_substr(saved, len, ft_strlen(saved) - len);
 	ft_free(&saved);
@@ -83,11 +83,10 @@ char	*ft_clean_saved(char *saved)
 
 char	*get_next_line(int fd)
 {
-	static char	*saved;
+	static char	*saved = NULL;
 	char		*line;
 
-	saved = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0)
 		return (NULL);
 	if ((saved && !ft_strchr(saved, '\n')) || !saved)
 		saved = ft_read_file(fd, saved);
@@ -97,5 +96,5 @@ char	*get_next_line(int fd)
 	if (!line)
 		return (ft_free(&saved));
 	saved = ft_clean_saved(saved);
-	return (saved);
+	return (line);
 }

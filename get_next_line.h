@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 09:07:12 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/01/16 11:54:26 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/17 10:21:08 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 # endif
 
 char	*get_next_line(int fd);
-int		ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
+char	*ft_free(char **str);
+size_t	ft_strlen(char *s);
+char	*ft_strchr(char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_substr(char *s, unsigned int start, size_t len);
-int		ft_strlcpy(char *dest, const char *src, size_t size);
 
 #endif

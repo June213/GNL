@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 09:20:24 by junesalaber       #+#    #+#             */
-/*   Updated: 2024/01/16 13:45:24 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/17 10:36:36 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
     	count++;
    	 	if (lines && lines[0] != '\0')
 		 {
-      		printf("%d: %s\n", count, lines);
+      		printf("%d: %s", count, lines);
        		free(lines);
     	}
 		else
